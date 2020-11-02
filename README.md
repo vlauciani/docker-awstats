@@ -8,20 +8,16 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/vlauciani/awstats.svg)
 
 # docker-awstats
-----------
-
 [Awstats](http://www.awstats.org) Docker Image. 
 
 Pre-built docker image is available on [Docker Hub](https://hub.docker.com/repository/docker/vlauciani/awstats).
 
 # Credits
-----------
 
 This Docker setup is based on work from:
 https://github.com/justb4/docker-awstats.
 
 # Quickstart
-----------
 
 ### Clone the repository
 First, clone the git repositry:
@@ -131,6 +127,12 @@ done
 # Non-zipped remaining files
 docker exec -it awstats awstats -config=mydomain.com -update -LogFile="${LOGDIR}/${LOGNAME}.1"
 docker exec -it awstats awstats -config=mydomain.com -update -LogFile="${LOGDIR}/${LOGNAME}"
-
-
 ```
+
+# Contribute
+Please, feel free to contribute.
+
+# Author
+(c) 2020 Valentino Lauciani valentino.lauciani[at]ingv.it
+
+Istituto Nazionale di Geofisica e Vulcanologia, Italia
