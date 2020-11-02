@@ -1,12 +1,8 @@
 FROM httpd:2.4.41
 
-# FROM httpd:2.4.41-alpine
-# Problem: https://gitlab.alpinelinux.org/alpine/aports/issues/10792
-# apache2-mod-perl missing in Alpine recent, cannot use httpd:2.4.*-alpine and geoip not avail on alpine!
-
-# Credits to Patrick Braune for providing first versions
-LABEL original_developer="Patrick Braune <https://github.com/pabra>" \
-	maintainer="Just van den Broecke <justb4@gmail.com>"
+# Credits to Just van den Broecke for providing first versions
+LABEL original_developer="Just van den Broecke <https://github.com/justb4>" \
+	maintainer="Valentino Lauciani <vlauciani@gmail.com>"
 
 ARG GEOIP_PACKAGES="libgeo-ipfree-perl libnet-ip-perl"
 
