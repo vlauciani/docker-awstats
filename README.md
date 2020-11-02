@@ -52,14 +52,10 @@ $ docker pull vlauciani/docker-awstats
 ```
 
 # Awstats Documentation
----------------------
-
 * All on [awstats config](http://www.awstats.org/docs/awstats_config.html)
 * https://blogging.dragon.org.uk/installing-awstats-on-ubuntu-16-04-lts/
 
-Design
-======
-
+## Design
 The intention is to have this Docker image as self-contained as possible in order to
 avoid host-bound/specific actions and tooling, in particular log processing via 
 host-based `cron`, we may even apply `logrotate` later. Also allow for multiple domains with minimal config.
