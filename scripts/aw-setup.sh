@@ -45,6 +45,12 @@ pushd ${AWSTATS_SITES_DIR}
 		# copy config for SITE
 		cp ${SITE_CONF} ${AWSTATS_CONF_DIR}/awstats.${SITE}.conf
 	done
+
+        # Comment the Include directive to use 'awstats.conf.local' file
+        mv ${AWSTATS_CONF_DIR}/awstats.conf ${AWSTATS_CONF_DIR}/awstats.conf.original
+        sed -e "s|Include \".*|#& |" ${AWSTATS_CONF_DIR}/awstats.conf.original > ${AWSTATS_CONF_DIR}/awstats.conf
+        
+        # Copy conf.local
         if [ -f conf.local ]; then
                 cp conf.local ${AWSTATS_CONF_DIR}/awstats.conf.local
         fi
