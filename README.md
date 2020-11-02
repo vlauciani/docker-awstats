@@ -1,7 +1,5 @@
-[![License](https://img.shields.io/github/license/INGV/docker-awstats.svg)](https://github.com/INGV/docker-awstats/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/INGV/docker-awstats.svg)](https://github.com/INGV/docker-awstats/issues)
-[![Join the #general channel](https://img.shields.io/badge/Slack%20channel-%23general-blue.svg)](https://ingv-institute.slack.com/messages/CKS902Y5B)
-[![Get invited](https://slack.developers.italia.it/badge.svg)](https://join.slack.com/t/ingv-institute/shared_invite/zt-ckoji8va-mutwycltiCw_EAhUWSND8Q)
+[![License](https://img.shields.io/github/license/vlauciani/docker-awstats.svg)](https://github.com/INGV/docker-awstats/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/vlauciani/docker-awstats.svg)](https://github.com/INGV/docker-awstats/issues)
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/vlauciani/docker-awstats)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/vlauciani/docker-awstats?sort=semver)
