@@ -3,7 +3,7 @@
 
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/vlauciani/docker-awstats)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/vlauciani/docker-awstats?sort=semver)
-![Docker Pulls](https://img.shields.io/docker/pulls/vlauciani/awstats.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/vlauciani/docker-awstats.svg)
 
 # docker-awstats
 [Awstats](http://www.awstats.org) Docker Image. 
