@@ -63,10 +63,33 @@ $ cp data/log/geotracing-access.log.example data/log/geotracing-access.log
 
 Start container:
 ```
-$ docker run --name=awstats -it --rm -p 8081:80 -v $(pwd)/data/sites:/etc/awstats/sites:ro -v $(pwd)/data/log/tmp:/var/local/log:ro -v $(pwd)/data/awstats:/var/lib/awstats docker-awstats
+$ docker run --name=docker-awstats -it --rm -p 8081:80 -v $(pwd)/data/sites:/etc/awstats/sites:ro -v $(pwd)/data/log:/var/local/log:ro -v $(pwd)/data/awstats:/var/lib/awstats vlauciani/docker-awstats
 ```
 
 Connect to: http://localhost:8081
+
+**Note**: The process to analize log files, starts every 10min. You can wait or open another shell and type:
+```
+$ docker exec -it docker-awstats aw-update.sh
+```
+
+### Starts in PRODUCTION in *detached (backgroud)* mode
+To start in production, *detach* the container adding the `-d` option:
+```
+$ docker run -d --name=docker-awstats -it --rm -p 8081:80 -v $(pwd)/data/sites:/etc/awstats/sites:ro -v $(pwd)/data/log:/var/local/log:ro -v $(pwd)/data/awstats:/var/lib/awstats vlauciani/docker-awstats
+```
+
+to view the logs:
+```
+$ docker logs -f docker-awstats
+```
+
+to stop:
+```
+$ docker stop docker-awstats
+```
+
+
 
 ## Design
 The intention is to have this Docker image as self-contained as possible in order to
