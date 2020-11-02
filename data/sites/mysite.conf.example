@@ -1,0 +1,5 @@
+Include "/etc/awstats/awstats.conf.local"
+
+#OnlyFiles="REGEX[^\/fdsnws/event]"
+SiteDomain="mysite.com"
+LogFile="/var/local/log/mysite-access.log"
