@@ -3,4 +3,5 @@
 # Except this file
 !.gitignore
 !geotracing.com.conf.example
+!mysite.conf.example
 !conf.local.example
