@@ -56,9 +56,9 @@ $ docker pull vlauciani/docker-awstats
 ### Starts an example
 Prepare input conf and log:
 ```
-$ cp data/sites/geotracing.com.conf.example cp data/sites/geotracing.com.conf
-$ cp data/sites/conf.local.example $ data/sites/conf.local
-$ cp data/log/geotracing-access.log.example $ data/log/geotracing-access.log
+$ cp data/sites/geotracing.com.conf.example data/sites/geotracing.com.conf
+$ cp data/sites/conf.local.example data/sites/conf.local
+$ cp data/log/geotracing-access.log.example data/log/geotracing-access.log
 ```
 
 Start container:
