@@ -10,12 +10,16 @@
 
 Pre-built docker image is available on [Docker Hub](https://hub.docker.com/repository/docker/vlauciani/awstats).
 
-# Credits
+## Credits
 
 This Docker setup is based on work from:
 https://github.com/justb4/docker-awstats.
 
-# Quickstart
+## Awstats Documentation
+* All on [awstats config](http://www.awstats.org/docs/awstats_config.html)
+* https://blogging.dragon.org.uk/installing-awstats-on-ubuntu-16-04-lts/
+
+## Quickstart
 
 ### Clone the repository
 First, clone the git repositry:
@@ -49,9 +53,20 @@ $ cd docker-awstats
 $ docker pull vlauciani/docker-awstats
 ```
 
-# Awstats Documentation
-* All on [awstats config](http://www.awstats.org/docs/awstats_config.html)
-* https://blogging.dragon.org.uk/installing-awstats-on-ubuntu-16-04-lts/
+### Starts an example
+Prepare input conf and log:
+```
+$ cp data/sites/geotracing.com.conf.example cp data/sites/geotracing.com.conf
+$ cp data/sites/conf.local.example $ data/sites/conf.local
+$ cp data/log/geotracing-access.log.example $ data/log/geotracing-access.log
+```
+
+Start container:
+```
+$ docker run --name=awstats -it --rm -p 8081:80 -v $(pwd)/data/sites:/etc/awstats/sites:ro -v $(pwd)/data/log/tmp:/var/local/log:ro -v $(pwd)/data/awstats:/var/lib/awstats docker-awstats
+```
+
+Connect to: http://localhost:8081
 
 ## Design
 The intention is to have this Docker image as self-contained as possible in order to
@@ -75,11 +90,10 @@ with the above features, input welcome!).
 The entry program is `supervisord` that will run a [setup program once](scripts/aw-setup.sh), `apache2` webserver daemon
 (for the landing page and logstats), and `cron` for Awstats processing.
  
-Advanced
-========
+## Advanced
 
-User-defined Scripts
---------------------
+
+### User-defined Scripts
 
 User-defined Shell/Bash scripts can be added in the directories `/aw-setup.d` and/or `/aw-update.d` by extending
 the Docker Image or easier via Docker Volume Mounting.
@@ -87,8 +101,7 @@ the Docker Image or easier via Docker Volume Mounting.
 Purpose is to provide hooks for preprocessing. For example, a script that fetches/syncs a logfile from a remote
 server just before [aw-update.sh](scripts/aw-update.sh) runs. This ensures the data is available.
 
-Analyze old log files
----------------------
+### Analyze old log files
 
 Awstats only processes lines in log files that are newer than the newest already
 known line.  
@@ -123,10 +136,10 @@ docker exec -it awstats awstats -config=mydomain.com -update -LogFile="${LOGDIR}
 docker exec -it awstats awstats -config=mydomain.com -update -LogFile="${LOGDIR}/${LOGNAME}"
 ```
 
-# Contribute
+## Contribute
 Please, feel free to contribute.
 
-# Author
+## Author
 (c) 2020 Valentino Lauciani valentino.lauciani[at]ingv.it
 
 Istituto Nazionale di Geofisica e Vulcanologia, Italia

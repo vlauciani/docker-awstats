@@ -4,4 +4,5 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-${AWSTATS_CRON_SCHEDULE} aw-update.sh > /var/log/awstats.log 2>&1
+${AWSTATS_CRON_SCHEDULE} (/usr/bin/flock --verbose -n /tmp/aw-update.lock aw-update.sh) >> /var/log/awstats.log 2>&1
+01 00 * * * mv /var/log/awstats.log /var/log/awstats.yesterday.log
