@@ -33,4 +33,12 @@ ENV \
 	AWSTATS_CONF_DEBUGMESSAGES="0" \
 	AWSTATS_CONF_DNSLOOKUP="1"
 
+# Set .bashrc
+RUN echo "" >> /root/.bashrc \
+     && echo "##################################" >> /root/.bashrc \
+     && echo "alias ll='ls -l --color'" >> /root/.bashrc \
+     && echo "" >> /root/.bashrc \
+     && echo "export LC_ALL=\"C\"" >> /root/.bashrc \
+     && echo "" >> /root/.bashrc
+
 CMD ["supervisord", "-c", "/etc/supervisord.conf"]
