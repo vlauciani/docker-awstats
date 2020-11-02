@@ -24,7 +24,7 @@ ADD scripts/*.sh  /usr/local/bin/
 ENV \
 	AWSTATS_CONF_DIR="/etc/awstats" \
 	AWSTATS_SITES_DIR="/etc/awstats/sites" \
-	AWSTATS_CRON_SCHEDULE="*/15 * * * *" \
+	AWSTATS_CRON_SCHEDULE="*/10 * * * *" \
 	AWSTATS_PATH_PREFIX="" \
 	AWSTATS_CONF_LOGFILE="/var/local/log/access.log" \
 	AWSTATS_CONF_LOGFORMAT="%host %other %logname %time1 %methodurl %code %bytesd %refererquot %uaquot" \
